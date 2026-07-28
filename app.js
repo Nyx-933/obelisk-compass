@@ -615,6 +615,10 @@ function renderRouteResults(result, jumpRange) {
   const container = document.getElementById("route-results");
   container.innerHTML = "";
 
+  const itemsList = document.createElement("div");
+  itemsList.className = "route-items-scroll";
+  container.appendChild(itemsList);
+
   // Visually sink fully-completed systems (0 useful codex left there right now) to the
   // bottom so the next actionable one is always first — but keep the "unfinished before"
   // warning based on the real underlying travel order, not this display order.
@@ -670,7 +674,7 @@ function renderRouteResults(result, jumpRange) {
       await retargetRouteFrom(step.group.system, { x: site0.coords.x, y: site0.coords.y, z: site0.coords.z });
       selectGroup(step.key);
     });
-    container.appendChild(item);
+    itemsList.appendChild(item);
   });
 
   // Systems that were fully done and dropped from this fresh computation entirely —
@@ -702,7 +706,7 @@ function renderRouteResults(result, jumpRange) {
       await retargetRouteFrom(group.system, { x: site0.coords.x, y: site0.coords.y, z: site0.coords.z });
       selectGroup(key);
     });
-    container.appendChild(item);
+    itemsList.appendChild(item);
   }
 
   const totalSubSites = result.route.reduce((sum, s) => sum + s.group.sites.length, 0);
