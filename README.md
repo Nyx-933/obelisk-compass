@@ -133,3 +133,6 @@ Dans le bloc "Route optimisée", seule la liste des systèmes à parcourir défi
 
 ## Réorganisation : import/export et annuler/réinitialiser (nouveau)
 Ces boutons (Exporter, Importer/Recalculer, Annuler, Réinitialiser) sont désormais rangés dans le même panneau repliable que le détail par catégorie, sous "Détail et actions" — masqués par défaut, ils libèrent de la place pour la liste de route et n'apparaissent que lorsque tu en as besoin. Corrige au passage un chevauchement visuel qui pouvait survenir sur certains écrans (Mac notamment).
+
+## Icône personnalisée (favicon) (nouveau)
+Une petite boussole stylisée (fond sombre, aiguille orange) remplace désormais l'icône Chrome par défaut dans l'onglet du navigateur — cohérente avec l'identité visuelle de l'appli.
