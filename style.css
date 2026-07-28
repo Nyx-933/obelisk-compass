@@ -372,14 +372,33 @@ html, body {
   background: var(--panel-alt);
   padding: 12px 18px;
 }
-.manual-add-title {
+.manual-add-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
   font-size: 12px;
   font-weight: 700;
   color: var(--orange);
   text-transform: uppercase;
   letter-spacing: .5px;
-  margin-bottom: 8px;
+  cursor: pointer;
+  padding: 4px 0;
 }
+.manual-add-toggle-btn:hover { color: var(--orange-bright); }
+.manual-add-toggle-arrow {
+  display: inline-block;
+  transition: transform .15s ease;
+  font-size: 10px;
+}
+.manual-add-toggle-btn[aria-expanded="true"] .manual-add-toggle-arrow {
+  transform: rotate(180deg);
+}
+.manual-add-fields.collapsed { display: none; }
+.manual-add-fields { margin-bottom: 8px; }
 .manual-add-row {
   display: flex;
   gap: 6px;

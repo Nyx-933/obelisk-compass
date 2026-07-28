@@ -1359,6 +1359,16 @@ function initTutorial() {
   });
 }
 
+function initManualAddToggle() {
+  const btn = document.getElementById("manual-add-toggle-btn");
+  const fields = document.getElementById("manual-add-fields");
+  btn.addEventListener("click", () => {
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", expanded ? "false" : "true");
+    fields.classList.toggle("collapsed", expanded);
+  });
+}
+
 function initCategoryToggle() {
   const btn = document.getElementById("category-toggle-btn");
   const panel = document.getElementById("progress-detail-panel");
@@ -1425,6 +1435,7 @@ function init() {
 
   initLangSelector();
   initCategoryToggle();
+  initManualAddToggle();
   initTutorial();
   initRouteOptimizer();
   initManualAdd();

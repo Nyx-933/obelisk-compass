@@ -136,3 +136,6 @@ Ces boutons (Exporter, Importer/Recalculer, Annuler, Réinitialiser) sont désor
 
 ## Icône personnalisée (favicon) (nouveau)
 Une petite boussole stylisée (fond sombre, aiguille orange) remplace désormais l'icône Chrome par défaut dans l'onglet du navigateur — cohérente avec l'identité visuelle de l'appli.
+
+## "Obélisque manqué par Canonn ?" devient un bouton repliable (nouveau)
+Ce formulaire, rarement utilisé au quotidien, est maintenant masqué par défaut — son titre devient un bouton sur lequel cliquer pour faire apparaître les champs juste au-dessus, comme "Détail et actions" mais positionné en bas de la colonne de droite. Ça libère de la place pour les obélisques utiles à scanner, surtout appréciable sur petit écran.
