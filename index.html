@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Obelisk Compass</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ LEFT PANEL ============ -->
+  <div class="sidebar">
+    <div class="sidebar-header-row">
+      <div class="app-title-block">
+        <h1>Obelisk Compass</h1>
+        <div class="app-subtitle" data-i18n="appSubtitle">(The Ram Tah Companion)</div>
+      </div>
+      <div class="header-controls">
+        <button id="tutorial-btn" data-i18n-title="tutorialBtnTitle" title="Tutoriel">❓</button>
+        <select id="lang-select" title="Language / Langue / Sprache / Idioma / Язык"></select>
+      </div>
+    </div>
+
+    <div class="progress-block">
+      <div class="progress-label">
+        <span data-i18n="progression">Progression</span>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-count-row">
+        <span class="progress-count" id="progress-count">0 / 101</span>
+        <button class="category-toggle-btn" id="category-toggle-btn" aria-expanded="true">
+          <span class="category-toggle-arrow">▾</span>
+          <span data-i18n="categoryToggleLabel">Détail par catégorie</span>
+        </button>
+      </div>
+      <div class="category-list" id="category-list"></div>
+    </div>
+
+    <div class="route-block">
+      <h2 data-i18n="routeOptimisee">Route optimisée</h2>
+      <div class="route-block-subtitle" data-i18n="routeOptimizerPitch">Un vrai moteur d'optimisation : élimine les sites redondants et calcule l'ordre de visite exactement optimal — pas juste un itinéraire approximatif.</div>
+      <div class="route-inputs">
+        <label class="field-label" data-i18n="startSystemLabel" for="start-system">Système de départ</label>
+        <input type="text" id="start-system" data-i18n-placeholder="startSystemPlaceholder" placeholder="Système actuel (ex: Meene)">
+        <label class="field-label" data-i18n="jumpRangeLabel" for="jump-range">Portée de saut de ton vaisseau (années-lumière)</label>
+        <input type="number" id="jump-range" data-i18n-placeholder="jumpRangePlaceholder" placeholder="Rayon de saut (al)" value="65">
+        <button id="optimize-btn" data-i18n="calculateRoute">Calculer la route</button>
+        <div class="sync-row" id="sync-row" style="display:none;">
+          <div class="sync-gears">
+            <span class="gear gear-cw">⚙</span><span class="gear gear-ccw">⚙</span>
+          </div>
+          <span class="sync-label" data-i18n="galaxySyncLabel">Synchronisation de la galaxie...</span>
+          <button id="skip-sync-btn" data-i18n="skipSyncBtn">Calculer sur données partielles</button>
+        </div>
+      </div>
+      <div class="route-status" id="route-status"></div>
+      <div class="route-results" id="route-results"></div>
+    </div>
+
+    <div class="io-block">
+      <div class="io-buttons">
+        <button id="export-toggle-btn" data-i18n="exportBtn">Exporter</button>
+        <button id="import-toggle-btn" data-i18n="importBtn">Importer / Recalculer</button>
+      </div>
+
+      <div class="io-panel" id="export-panel" style="display:none;">
+        <div class="io-hint" id="export-hint" data-i18n="exportHint">Ta progression actuelle, format H01 L12 T09... :</div>
+        <textarea id="export-textarea" readonly></textarea>
+        <button id="copy-export-btn" data-i18n="copyBtn">Copier</button>
+        <div class="io-status" id="export-status"></div>
+      </div>
+
+      <div class="io-panel" id="import-panel" style="display:none;">
+        <div class="io-hint" data-i18n-html="importHintHtml">Colle ici une liste sûre (mails, etc.) : H01 L12 T09 B05... Ça <strong>remplace entièrement</strong> ta progression actuelle.</div>
+        <textarea id="import-textarea" data-i18n-placeholder="importTextareaPlaceholder" placeholder="H01 L12 T09 B05 C14 ..."></textarea>
+        <button id="import-apply-btn" data-i18n="importApplyBtn">Remplacer ma progression par cette liste</button>
+        <div class="io-status" id="import-status"></div>
+      </div>
+    </div>
+
+    <div class="bottom-actions">
+      <button id="undo-btn" data-i18n="undoBtnTitle" data-i18n-title="undoBtnTitle" title="Annuler la dernière case cochée" disabled>Annuler (0)</button>
+      <button id="reset-btn" data-i18n="resetBtnText" data-i18n-title="resetBtnTitle" title="Réinitialiser toute la progression">Réinitialiser la progression</button>
+    </div>
+
+    <div class="app-footer">
+      Obelisk Compass · by <a href="https://github.com/Nyx-933" target="_blank" rel="noopener">Nyx-933</a> · data by <a href="https://canonn.science/" target="_blank" rel="noopener">Canonn</a>
+    </div>
+  </div>
+
+  <!-- ============ MIDDLE PANEL : map ============ -->
+  <div class="main">
+    <div class="welcome-screen" id="welcome-screen">
+      <div class="welcome-inner">
+        <div class="welcome-title-block">
+          <h1 class="welcome-title">OBELISK COMPASS</h1>
+          <div class="welcome-subtitle" data-i18n="appSubtitle">(The Ram Tah Companion)</div>
+          <div class="welcome-tagline" data-i18n="welcomeTagline">Entamez ou reprenez (grâce à l'import/export) le voyage vers les 101 obélisques de Ram Tah</div>
+        </div>
+        <img class="welcome-hero-image" src="screenshot-hero.png" alt="Aperçu d'Obelisk Compass en action">
+        <div class="tutorial-content welcome-tutorial" data-i18n-html="tutorialHtml"></div>
+      </div>
+    </div>
+    <div class="iframe-wrap" id="iframe-wrap" style="display:none;">
+      <div class="map-dependency-note" data-i18n-html="mapDependencyNote">
+        Carte fournie par <strong>Canonn</strong> (site communautaire externe, indépendant d'Obelisk Compass). Si elle ne s'affiche pas correctement, le reste de l'outil (route, progression, reprise de mission) continue de fonctionner normalement.
+      </div>
+      <iframe id="canonn-frame" src="https://ruins.canonn.tech/" title="Canonn Ruins Map"></iframe>
+    </div>
+  </div>
+
+  <!-- ============ RIGHT PANEL : obelisk detail ============ -->
+  <div class="detail-panel" id="detail-panel">
+    <div class="detail-scroll">
+      <div class="detail-empty" id="detail-empty" data-i18n="detailEmpty">
+        Sélectionne un système à gauche pour voir les obélisques utiles à scanner.
+      </div>
+      <div class="detail-content" id="detail-content" style="display:none;">
+        <div class="detail-title-row">
+          <div class="detail-title" id="detail-title"></div>
+          <button id="copy-system-btn" data-i18n="copySystemBtn" data-i18n-title="copySystemBtnTitle" title="Copier le nom du système (pour la carte galactique du jeu)">📋 Copier</button>
+        </div>
+        <div class="detail-body" id="detail-body"></div>
+        <div class="detail-system-reset" id="detail-system-reset"></div>
+        <div class="detail-sites" id="detail-sites"></div>
+      </div>
+    </div>
+
+    <div class="manual-add" id="manual-add" style="display:none;">
+      <div class="manual-add-title" data-i18n="manualAddTitle">Obélisque manqué par Canonn ?</div>
+      <div class="manual-add-row">
+        <select id="manual-category">
+          <option value="History" data-i18n-cat="History">History</option>
+          <option value="Language" data-i18n-cat="Language">Language</option>
+          <option value="Biology" data-i18n-cat="Biology">Biology</option>
+          <option value="Culture" data-i18n-cat="Culture">Culture</option>
+          <option value="Technology" data-i18n-cat="Technology">Technology</option>
+        </select>
+        <input type="number" id="manual-codex" data-i18n-placeholder="manualCodexPlaceholder" placeholder="#codex" min="1">
+      </div>
+      <div class="manual-add-row">
+        <input type="text" id="manual-obelisk" data-i18n-placeholder="manualObeliskPlaceholder" placeholder="Obélisque (ex: C5, optionnel)">
+      </div>
+      <div class="manual-add-row">
+        <input type="text" id="manual-items" data-i18n-placeholder="manualItemsPlaceholder" placeholder="Objets (ex: Totem + Urne, optionnel)">
+      </div>
+      <button id="manual-add-btn" data-i18n="manualAddBtn">Ajouter</button>
+      <div class="manual-add-status" id="manual-add-status"></div>
+      <div class="manual-add-log" id="manual-add-log"></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal-overlay" id="modal-overlay" style="display:none;">
+  <div class="modal-box">
+    <div class="modal-message" id="modal-message"></div>
+    <div class="modal-buttons">
+      <button id="modal-cancel-btn" data-i18n="modalCancelBtn">Annuler</button>
+      <button id="modal-confirm-btn" data-i18n="modalConfirmBtn">Confirmer</button>
+    </div>
+  </div>
+</div>
+
+<canvas id="confetti-canvas" style="display:none;"></canvas>
+<div class="celebrate-overlay" id="celebrate-overlay" style="display:none;">
+  <div class="celebrate-box">
+    <div class="celebrate-emoji">🎉</div>
+    <div class="celebrate-title" data-i18n="celebrateTitle">101 / 101</div>
+    <div class="celebrate-text" data-i18n="celebrateText">Mission Ram Tah terminée — tous les fragments du Codex Guardian ont été retrouvés.</div>
+    <div class="celebrate-meene-row">
+      <span data-i18n="celebrateMeeneBefore">N'oubliez pas de ramener vos résultats à Ram Tah dans</span>
+      <button id="celebrate-copy-meene-btn" data-i18n="celebrateCopyMeeneBtn">📋 Meene</button>
+      <span data-i18n="celebrateMeeneAfter">;)</span>
+    </div>
+    <button id="celebrate-close-btn" data-i18n="celebrateCloseBtn">Fermer</button>
+  </div>
+</div>
+
+<div class="tutorial-overlay" id="tutorial-overlay" style="display:none;">
+  <div class="tutorial-box">
+    <div class="tutorial-header">
+      <h2 data-i18n="tutorialTitle">Comment utiliser Obelisk Compass</h2>
+      <button id="tutorial-close-btn" class="tutorial-close-x">✕</button>
+    </div>
+    <div class="tutorial-content" id="tutorial-content" data-i18n-html="tutorialHtml"></div>
+    <div class="tutorial-footer">
+      <button id="tutorial-close-bottom-btn" data-i18n="celebrateCloseBtn">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
