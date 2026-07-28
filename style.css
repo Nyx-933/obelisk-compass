@@ -119,7 +119,10 @@ html, body {
   border-radius: 4px;
   overflow: hidden;
 }
-.category-list.collapsed { display: none; }
+
+.progress-detail-panel.collapsed { display: none; }
+.progress-detail-panel .io-block { margin-top: 14px; }
+.progress-detail-panel .bottom-actions { margin-top: 12px; }
 
 .category-row {
   display: flex;

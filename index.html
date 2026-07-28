@@ -34,10 +34,38 @@
         <span class="progress-count" id="progress-count">0 / 101</span>
         <button class="category-toggle-btn" id="category-toggle-btn" aria-expanded="false">
           <span class="category-toggle-arrow">▾</span>
-          <span data-i18n="categoryToggleLabel">Détail par catégorie</span>
+          <span data-i18n="categoryToggleLabel">Détail et actions</span>
         </button>
       </div>
-      <div class="category-list collapsed" id="category-list"></div>
+      <div class="progress-detail-panel collapsed" id="progress-detail-panel">
+        <div class="category-list" id="category-list"></div>
+
+        <div class="io-block">
+          <div class="io-buttons">
+            <button id="export-toggle-btn" data-i18n="exportBtn">Exporter</button>
+            <button id="import-toggle-btn" data-i18n="importBtn">Importer / Recalculer</button>
+          </div>
+
+          <div class="io-panel" id="export-panel" style="display:none;">
+            <div class="io-hint" id="export-hint" data-i18n="exportHint">Ta progression actuelle, format H01 L12 T09... :</div>
+            <textarea id="export-textarea" readonly></textarea>
+            <button id="copy-export-btn" data-i18n="copyBtn">Copier</button>
+            <div class="io-status" id="export-status"></div>
+          </div>
+
+          <div class="io-panel" id="import-panel" style="display:none;">
+            <div class="io-hint" data-i18n-html="importHintHtml">Colle ici une liste sûre (mails, etc.) : H01 L12 T09 B05... Ça <strong>remplace entièrement</strong> ta progression actuelle.</div>
+            <textarea id="import-textarea" data-i18n-placeholder="importTextareaPlaceholder" placeholder="H01 L12 T09 B05 C14 ..."></textarea>
+            <button id="import-apply-btn" data-i18n="importApplyBtn">Remplacer ma progression par cette liste</button>
+            <div class="io-status" id="import-status"></div>
+          </div>
+        </div>
+
+        <div class="bottom-actions">
+          <button id="undo-btn" data-i18n="undoBtnTitle" data-i18n-title="undoBtnTitle" title="Annuler la dernière case cochée" disabled>Annuler (0)</button>
+          <button id="reset-btn" data-i18n="resetBtnText" data-i18n-title="resetBtnTitle" title="Réinitialiser toute la progression">Réinitialiser la progression</button>
+        </div>
+      </div>
     </div>
 
     <div class="route-block">
@@ -59,32 +87,6 @@
       </div>
       <div class="route-status" id="route-status"></div>
       <div class="route-results" id="route-results"></div>
-    </div>
-
-    <div class="io-block">
-      <div class="io-buttons">
-        <button id="export-toggle-btn" data-i18n="exportBtn">Exporter</button>
-        <button id="import-toggle-btn" data-i18n="importBtn">Importer / Recalculer</button>
-      </div>
-
-      <div class="io-panel" id="export-panel" style="display:none;">
-        <div class="io-hint" id="export-hint" data-i18n="exportHint">Ta progression actuelle, format H01 L12 T09... :</div>
-        <textarea id="export-textarea" readonly></textarea>
-        <button id="copy-export-btn" data-i18n="copyBtn">Copier</button>
-        <div class="io-status" id="export-status"></div>
-      </div>
-
-      <div class="io-panel" id="import-panel" style="display:none;">
-        <div class="io-hint" data-i18n-html="importHintHtml">Colle ici une liste sûre (mails, etc.) : H01 L12 T09 B05... Ça <strong>remplace entièrement</strong> ta progression actuelle.</div>
-        <textarea id="import-textarea" data-i18n-placeholder="importTextareaPlaceholder" placeholder="H01 L12 T09 B05 C14 ..."></textarea>
-        <button id="import-apply-btn" data-i18n="importApplyBtn">Remplacer ma progression par cette liste</button>
-        <div class="io-status" id="import-status"></div>
-      </div>
-    </div>
-
-    <div class="bottom-actions">
-      <button id="undo-btn" data-i18n="undoBtnTitle" data-i18n-title="undoBtnTitle" title="Annuler la dernière case cochée" disabled>Annuler (0)</button>
-      <button id="reset-btn" data-i18n="resetBtnText" data-i18n-title="resetBtnTitle" title="Réinitialiser toute la progression">Réinitialiser la progression</button>
     </div>
 
     <div class="app-footer">

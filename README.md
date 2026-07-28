@@ -73,9 +73,6 @@ Résultat mesuré : sur le même point de départ, on passe de 14 sites / 937 al
 ## Labels visibles sur les champs de route (correctif ergonomie)
 Les deux champs du bloc "Route optimisée" (système de départ, portée de saut) ont maintenant de vrais labels visibles au-dessus, dans les 5 langues — auparavant ce n'était qu'un texte de type "placeholder", invisible dès qu'une valeur était déjà présente (le champ portée de saut a une valeur par défaut de 65, donc son indication ne s'affichait jamais). Un nouvel utilisateur sait maintenant clairement quoi renseigner.
 
-## Détail par catégorie repliable (nouveau)
-La progression reste à sa place d'origine (colonne de gauche), mais le détail par catégorie (History/Language/Biology/Culture/Technology) peut maintenant se replier/déplier via une petite flèche à côté du compteur — pratique pour gagner de la place verticale si besoin. Ouvert par défaut.
-
 ## Correctif de vocabulaire : systèmes vs sites (important)
 Le résumé de la route affichait "X site(s)" alors que ce nombre correspondait en réalité au nombre de **systèmes** (planètes) à visiter, pas au nombre réel de sites individuels (une planète pouvant avoir plusieurs sous-sites Alpha/Beta/Gamma). Le résumé affiche maintenant clairement les deux : *"12 systèmes (30 sites) · 765 al au total · ~18 sauts estimés"*.
 
@@ -124,3 +121,15 @@ Une phrase met désormais en avant dès le premier coup d'œil la possibilité d
 
 ## Capture d'écran d'illustration sur l'écran d'accueil (nouveau)
 Une capture d'écran de l'appli en action (route calculée + carte + progression) s'affiche maintenant juste sous le titre, avant le tutoriel détaillé — un coup d'œil qui montre immédiatement le fonctionnement global, plus "vendeur" qu'un simple mur de texte.
+
+## Corrections d'affichage sur petits écrans (nouveau)
+Trois ajustements pour que l'appli reste utilisable même sur un écran plus petit (Mac, portable, etc.) :
+1. Le détail par catégorie (Histoire/Langue/Biologie/Culture/Technologie) est maintenant **replié par défaut** — il prenait de la place inutilement pour beaucoup d'utilisateurs.
+2. La colonne de gauche **défile désormais correctement** si son contenu dépasse la hauteur de l'écran (avant, le surplus était simplement invisible et inaccessible, sans aucun moyen de faire défiler).
+3. Après un calcul de route, l'affichage **remonte automatiquement** vers le début du résultat, pour ne pas avoir à chercher où il est apparu.
+
+## Total de route toujours visible (nouveau)
+Dans le bloc "Route optimisée", seule la liste des systèmes à parcourir défile désormais (dans une zone bornée) — le résumé final (nombre de systèmes, sites, distance et sauts estimés) reste toujours visible en dessous, sans avoir besoin de faire défiler jusqu'en bas pour le consulter.
+
+## Réorganisation : import/export et annuler/réinitialiser (nouveau)
+Ces boutons (Exporter, Importer/Recalculer, Annuler, Réinitialiser) sont désormais rangés dans le même panneau repliable que le détail par catégorie, sous "Détail et actions" — masqués par défaut, ils libèrent de la place pour la liste de route et n'apparaissent que lorsque tu en as besoin. Corrige au passage un chevauchement visuel qui pouvait survenir sur certains écrans (Mac notamment).

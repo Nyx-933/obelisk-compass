@@ -1361,11 +1361,11 @@ function initTutorial() {
 
 function initCategoryToggle() {
   const btn = document.getElementById("category-toggle-btn");
-  const list = document.getElementById("category-list");
+  const panel = document.getElementById("progress-detail-panel");
   btn.addEventListener("click", () => {
     const expanded = btn.getAttribute("aria-expanded") === "true";
     btn.setAttribute("aria-expanded", expanded ? "false" : "true");
-    list.classList.toggle("collapsed", expanded);
+    panel.classList.toggle("collapsed", expanded);
   });
 }
 
