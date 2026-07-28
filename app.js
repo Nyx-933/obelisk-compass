@@ -223,6 +223,14 @@ function syncGroupLive(key) {
       if (idx === -1) return;
       group.sites[idx] = applyLiveData(bundled, live);
       if (selectedGroupKey === key) renderDetail();
+    }).catch(() => {
+      // Should never happen (getLiveSiteData already catches its own errors), but just in
+      // case — fall back to offline rather than leaving the "syncing..." badge stuck forever.
+      const bundled = BUNDLED_SITES_BY_ID[siteID];
+      const idx = group.sites.findIndex(s => s.siteID === siteID);
+      if (idx === -1) return;
+      group.sites[idx] = applyLiveData(bundled, null);
+      if (selectedGroupKey === key) renderDetail();
     });
   }
 }
@@ -1034,8 +1042,10 @@ async function getLiveSiteData(siteID) {
   if (cached && (Date.now() - cached.ts) < LIVE_CACHE_TTL) {
     return cached;
   }
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
   try {
-    const res = await fetch(CANONN_SITE_URL(siteID));
+    const res = await fetch(CANONN_SITE_URL(siteID), { signal: controller.signal });
     if (!res.ok) throw new Error("HTTP " + res.status);
     const json = await res.json();
     const transformed = transformCanonnSite(json);
@@ -1046,6 +1056,8 @@ async function getLiveSiteData(siteID) {
     return entry;
   } catch (e) {
     return cached || null; // stale cache is still better than nothing; else null triggers fallback
+  } finally {
+    clearTimeout(timeout);
   }
 }
 

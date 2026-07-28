@@ -139,3 +139,6 @@ Une petite boussole stylisée (fond sombre, aiguille orange) remplace désormais
 
 ## "Obélisque manqué par Canonn ?" devient un bouton repliable (nouveau)
 Ce formulaire, rarement utilisé au quotidien, est maintenant masqué par défaut — son titre devient un bouton sur lequel cliquer pour faire apparaître les champs juste au-dessus, comme "Détail et actions" mais positionné en bas de la colonne de droite. Ça libère de la place pour les obélisques utiles à scanner, surtout appréciable sur petit écran.
+
+## Correction : badge "synchronisation..." qui restait bloqué (important)
+Un vrai bug corrigé : si la requête vers Canonn pour un site précis restait bloquée (sans jamais répondre ni échouer proprement), le badge affichait "synchronisation..." indéfiniment, sans jamais se résoudre. Un délai de sécurité de 8 secondes (comme pour les recherches EDSM) garantit maintenant que ça bascule toujours sur "à jour" ou "hors-ligne" — jamais bloqué pour de bon. Testé avec une requête qui ne répond jamais : résolution automatique confirmée après 8 secondes.
