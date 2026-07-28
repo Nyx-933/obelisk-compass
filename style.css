@@ -42,7 +42,8 @@ html, body {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .sidebar h1 {

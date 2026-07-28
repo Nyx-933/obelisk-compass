@@ -743,6 +743,13 @@ function runRouteCalculation(startCoords, jumpRange, { resetHistory = false } = 
   lastRouteResult = result;
   lastJumpRange = jumpRange;
   renderRouteResults(result, jumpRange);
+
+  // Bring the freshly computed route into view — on smaller screens the sidebar content
+  // (progress, route form, etc.) can push the results well below the fold otherwise.
+  const resultsEl = document.getElementById("route-results");
+  if (resultsEl.firstChild) {
+    resultsEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 function initRouteOptimizer() {
