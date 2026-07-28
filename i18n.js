@@ -56,13 +56,13 @@ const STRINGS = {
 <p>At the bottom of the right column, a small form lets you manually add a data entry obtained in-game that the app didn't show as available (category + codex number required, obelisk and items optional, just for your own reference).</p>
 
 <h3>💾 Save or resume your progress</h3>
-<p><strong>Export</strong> shows your progress as a compact list (e.g. <code>H01 L12 T09...</code>) to copy and keep somewhere safe. <strong>Import / Recalculate</strong> lets you paste a trusted list (rebuilt from your mission mails, for instance) to fully replace your progress — useful if you start using the app after already being well into the mission.</p>
+<p>Expand <strong>Details and actions</strong> (small arrow next to the progress counter) to reach <strong>Export</strong>, which shows your progress as a compact list (e.g. <code>H01 L12 T09...</code>) to copy and keep somewhere safe, and <strong>Import / Recalculate</strong>, which lets you paste a trusted list (rebuilt from your mission mails, for instance) to fully replace your progress — useful if you start using the app after already being well into the mission.</p>
 
 <h3>↩️ Undo and reset</h3>
-<p><strong>Undo</strong> only removes the very last checked item. In the right column, a <strong>Reset this system</strong> button appears when needed to only uncheck data obtained on the displayed planet, without touching anything else. <strong>Reset progress</strong> resets everything (with confirmation).</p>
+<p>Also under <strong>Details and actions</strong>: <strong>Undo</strong> only removes the very last checked item. In the right column, a <strong>Reset this system</strong> button appears when needed to only uncheck data obtained on the displayed planet, without touching anything else. <strong>Reset progress</strong> resets everything (with confirmation).</p>
 
-<h3>🌐 Language and categories</h3>
-<p>The selector at the top right changes the interface language at any time (auto-detected on first load). The small arrow next to the progress counter collapses or expands the category breakdown (History, Language, Biology, Culture, Technology).</p>
+<h3>🌐 Language and category detail</h3>
+<p>The selector at the top right changes the interface language at any time (auto-detected on first load). The <strong>Details and actions</strong> button collapses or expands both the category breakdown (History, Language, Biology, Culture, Technology) and the buttons above — hidden by default to leave room for the computed route.</p>
 
 `,
     tutorialTitle: "How to use Obelisk Compass",
@@ -187,13 +187,13 @@ const STRINGS = {
 <p>En bas de la colonne de droite, un petit formulaire permet d'ajouter à la main une donnée obtenue en jeu mais que l'appli n'affichait pas comme disponible (catégorie + numéro de codex obligatoires, obélisque et objets facultatifs, juste pour ta mémoire).</p>
 
 <h3>💾 Sauvegarder ou reprendre ta progression</h3>
-<p><strong>Exporter</strong> affiche ta progression sous forme de liste compacte (ex: <code>H01 L12 T09...</code>) à copier et garder de côté. <strong>Importer / Recalculer</strong> permet de coller une liste sûre (reconstituée depuis tes mails de mission par exemple) pour remplacer entièrement ta progression — utile si tu commences à utiliser l'appli après avoir déjà bien avancé dans la mission.</p>
+<p>Déplie <strong>Détail et actions</strong> (petite flèche à côté du compteur de progression) pour accéder à <strong>Exporter</strong>, qui affiche ta progression sous forme de liste compacte (ex: <code>H01 L12 T09...</code>) à copier et garder de côté, et <strong>Importer / Recalculer</strong>, qui permet de coller une liste sûre (reconstituée depuis tes mails de mission par exemple) pour remplacer entièrement ta progression — utile si tu commences à utiliser l'appli après avoir déjà bien avancé dans la mission.</p>
 
 <h3>↩️ Annuler et réinitialiser</h3>
-<p><strong>Annuler</strong> retire uniquement la toute dernière case cochée. Dans la colonne de droite, un bouton <strong>Réinitialiser ce système</strong> apparaît si besoin pour ne décocher que les données obtenues sur la planète affichée, sans toucher au reste. <strong>Réinitialiser la progression</strong> remet tout à zéro (avec confirmation).</p>
+<p>Toujours sous <strong>Détail et actions</strong> : <strong>Annuler</strong> retire uniquement la toute dernière case cochée. Dans la colonne de droite, un bouton <strong>Réinitialiser ce système</strong> apparaît si besoin pour ne décocher que les données obtenues sur la planète affichée, sans toucher au reste. <strong>Réinitialiser la progression</strong> remet tout à zéro (avec confirmation).</p>
 
-<h3>🌐 Langue et catégories</h3>
-<p>Le sélecteur en haut à droite change la langue de l'interface à tout moment (détectée automatiquement au premier chargement). La petite flèche à côté du compteur de progression replie ou déplie le détail par catégorie (Histoire, Langue, Biologie, Culture, Technologie).</p>
+<h3>🌐 Langue et détail par catégorie</h3>
+<p>Le sélecteur en haut à droite change la langue de l'interface à tout moment (détectée automatiquement au premier chargement). Le bouton <strong>Détail et actions</strong> replie ou déplie à la fois le détail par catégorie (Histoire, Langue, Biologie, Culture, Technologie) et les boutons ci-dessus — masqués par défaut pour laisser toute la place à la route calculée.</p>
 
 `,
     tutorialTitle: "Comment utiliser Obelisk Compass",
@@ -318,13 +318,13 @@ const STRINGS = {
 <p>Unten in der rechten Spalte kannst du über ein kleines Formular manuell einen im Spiel erhaltenen Dateneintrag hinzufügen, den die App nicht als verfügbar anzeigte (Kategorie + Codex-Nummer erforderlich, Obelisk und Gegenstände optional, nur zur eigenen Erinnerung).</p>
 
 <h3>💾 Fortschritt sichern oder fortsetzen</h3>
-<p><strong>Exportieren</strong> zeigt deinen Fortschritt als kompakte Liste (z. B. <code>H01 L12 T09...</code>) zum Kopieren und sicheren Aufbewahren. <strong>Importieren / Neu berechnen</strong> lässt dich eine vertrauenswürdige Liste einfügen (z. B. aus deinen Missions-Mails rekonstruiert), um deinen Fortschritt komplett zu ersetzen — nützlich, wenn du die App erst benutzt, nachdem du bei der Mission schon weit warst.</p>
+<p>Klappe <strong>Details und Aktionen</strong> auf (kleiner Pfeil neben dem Fortschrittszähler), um zu <strong>Exportieren</strong> zu gelangen, das deinen Fortschritt als kompakte Liste (z. B. <code>H01 L12 T09...</code>) zum Kopieren und sicheren Aufbewahren zeigt, und <strong>Importieren / Neu berechnen</strong>, das dich eine vertrauenswürdige Liste einfügen lässt (z. B. aus deinen Missions-Mails rekonstruiert), um deinen Fortschritt komplett zu ersetzen — nützlich, wenn du die App erst benutzt, nachdem du bei der Mission schon weit warst.</p>
 
 <h3>↩️ Rückgängig machen und zurücksetzen</h3>
-<p><strong>Rückgängig</strong> entfernt nur den allerletzten abgehakten Eintrag. In der rechten Spalte erscheint bei Bedarf ein Button <strong>Dieses System zurücksetzen</strong>, um nur die auf dem angezeigten Planeten erhaltenen Daten zu entfernen, ohne den Rest zu berühren. <strong>Fortschritt zurücksetzen</strong> setzt alles zurück (mit Bestätigung).</p>
+<p>Ebenfalls unter <strong>Details und Aktionen</strong>: <strong>Rückgängig</strong> entfernt nur den allerletzten abgehakten Eintrag. In der rechten Spalte erscheint bei Bedarf ein Button <strong>Dieses System zurücksetzen</strong>, um nur die auf dem angezeigten Planeten erhaltenen Daten zu entfernen, ohne den Rest zu berühren. <strong>Fortschritt zurücksetzen</strong> setzt alles zurück (mit Bestätigung).</p>
 
-<h3>🌐 Sprache und Kategorien</h3>
-<p>Die Auswahl oben rechts ändert die Interface-Sprache jederzeit (beim ersten Laden automatisch erkannt). Der kleine Pfeil neben dem Fortschrittszähler klappt die Aufschlüsselung nach Kategorie ein oder aus (Geschichte, Sprache, Biologie, Kultur, Technologie).</p>
+<h3>🌐 Sprache und Kategoriedetail</h3>
+<p>Die Auswahl oben rechts ändert die Interface-Sprache jederzeit (beim ersten Laden automatisch erkannt). Der Button <strong>Details und Aktionen</strong> klappt sowohl die Aufschlüsselung nach Kategorie (Geschichte, Sprache, Biologie, Kultur, Technologie) als auch die obigen Buttons ein oder aus — standardmäßig ausgeblendet, um Platz für die berechnete Route zu lassen.</p>
 
 `,
     tutorialTitle: "So funktioniert Obelisk Compass",
@@ -449,13 +449,13 @@ const STRINGS = {
 <p>Al final de la columna derecha, un pequeño formulario permite añadir manualmente un dato obtenido en el juego que la app no mostraba como disponible (categoría + número de códex obligatorios, obelisco y objetos opcionales, solo para tu propia referencia).</p>
 
 <h3>💾 Guardar o retomar tu progreso</h3>
-<p><strong>Exportar</strong> muestra tu progreso como una lista compacta (ej: <code>H01 L12 T09...</code>) para copiar y guardar en un lugar seguro. <strong>Importar / Recalcular</strong> te permite pegar una lista fiable (reconstruida a partir de tus correos de misión, por ejemplo) para reemplazar por completo tu progreso — útil si empiezas a usar la app cuando ya llevas mucho avanzado en la misión.</p>
+<p>Despliega <strong>Detalle y acciones</strong> (pequeña flecha junto al contador de progreso) para acceder a <strong>Exportar</strong>, que muestra tu progreso como una lista compacta (ej: <code>H01 L12 T09...</code>) para copiar y guardar en un lugar seguro, e <strong>Importar / Recalcular</strong>, que te permite pegar una lista fiable (reconstruida a partir de tus correos de misión, por ejemplo) para reemplazar por completo tu progreso — útil si empiezas a usar la app cuando ya llevas mucho avanzado en la misión.</p>
 
 <h3>↩️ Deshacer y reiniciar</h3>
-<p><strong>Deshacer</strong> solo elimina la última casilla marcada. En la columna derecha aparece, cuando hace falta, un botón <strong>Reiniciar este sistema</strong> para desmarcar solo los datos obtenidos en el planeta mostrado, sin tocar el resto. <strong>Reiniciar progreso</strong> lo reinicia todo (con confirmación).</p>
+<p>También bajo <strong>Detalle y acciones</strong>: <strong>Deshacer</strong> solo elimina la última casilla marcada. En la columna derecha aparece, cuando hace falta, un botón <strong>Reiniciar este sistema</strong> para desmarcar solo los datos obtenidos en el planeta mostrado, sin tocar el resto. <strong>Reiniciar progreso</strong> lo reinicia todo (con confirmación).</p>
 
-<h3>🌐 Idioma y categorías</h3>
-<p>El selector arriba a la derecha cambia el idioma de la interfaz en cualquier momento (detectado automáticamente en la primera carga). La pequeña flecha junto al contador de progreso pliega o despliega el detalle por categoría (Historia, Idioma, Biología, Cultura, Tecnología).</p>
+<h3>🌐 Idioma y detalle por categoría</h3>
+<p>El selector arriba a la derecha cambia el idioma de la interfaz en cualquier momento (detectado automáticamente en la primera carga). El botón <strong>Detalle y acciones</strong> pliega o despliega tanto el detalle por categoría (Historia, Idioma, Biología, Cultura, Tecnología) como los botones anteriores — ocultos por defecto para dejar sitio a la ruta calculada.</p>
 
 `,
     tutorialTitle: "C\u00f3mo usar Obelisk Compass",
@@ -580,13 +580,13 @@ const STRINGS = {
 <p>Внизу правой колонки небольшая форма позволяет вручную добавить запись, полученную в игре, но не показанную приложением как доступную (категория и номер кодекса обязательны, обелиск и предметы — по желанию, просто для памяти).</p>
 
 <h3>💾 Сохранить или продолжить прогресс</h3>
-<p><strong>Экспорт</strong> показывает ваш прогресс в виде компактного списка (напр. <code>H01 L12 T09...</code>) для копирования и надёжного хранения. <strong>Импорт / Пересчёт</strong> позволяет вставить надёжный список (например, восстановленный из писем миссии), чтобы полностью заменить ваш прогресс — полезно, если вы начинаете пользоваться приложением, уже далеко продвинувшись в миссии.</p>
+<p>Разверните <strong>Детали и действия</strong> (маленькая стрелка рядом со счётчиком прогресса), чтобы попасть в <strong>Экспорт</strong>, который показывает ваш прогресс в виде компактного списка (напр. <code>H01 L12 T09...</code>) для копирования и надёжного хранения, и <strong>Импорт / Пересчёт</strong>, который позволяет вставить надёжный список (например, восстановленный из писем миссии), чтобы полностью заменить ваш прогресс — полезно, если вы начинаете пользоваться приложением, уже далеко продвинувшись в миссии.</p>
 
 <h3>↩️ Отмена и сброс</h3>
-<p><strong>Отменить</strong> убирает только самую последнюю отмеченную запись. В правой колонке при необходимости появляется кнопка <strong>Сбросить эту систему</strong>, снимающая отметки только с данных, полученных на отображаемой планете, не затрагивая остальное. <strong>Сбросить прогресс</strong> сбрасывает всё (с подтверждением).</p>
+<p>Также под <strong>Детали и действия</strong>: <strong>Отменить</strong> убирает только самую последнюю отмеченную запись. В правой колонке при необходимости появляется кнопка <strong>Сбросить эту систему</strong>, снимающая отметки только с данных, полученных на отображаемой планете, не затрагивая остальное. <strong>Сбросить прогресс</strong> сбрасывает всё (с подтверждением).</p>
 
-<h3>🌐 Язык и категории</h3>
-<p>Переключатель вверху справа меняет язык интерфейса в любой момент (определяется автоматически при первой загрузке). Маленькая стрелка рядом со счётчиком прогресса сворачивает или разворачивает разбивку по категориям (История, Язык, Биология, Культура, Технология).</p>
+<h3>🌐 Язык и разбивка по категориям</h3>
+<p>Переключатель вверху справа меняет язык интерфейса в любой момент (определяется автоматически при первой загрузке). Кнопка <strong>Детали и действия</strong> сворачивает или разворачивает как разбивку по категориям (История, Язык, Биология, Культура, Технология), так и кнопки выше — скрытые по умолчанию, чтобы оставить место для рассчитанного маршрута.</p>
 
 `,
     tutorialTitle: "\u041a\u0430\u043a \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c\u0441\u044f Obelisk Compass",
